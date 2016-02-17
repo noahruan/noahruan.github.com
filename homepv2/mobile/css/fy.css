@@ -1,0 +1,82 @@
+/*******************加入媒体*****************/
+.jrmt{
+	margin: 0 24px;padding: 30px 0;margin-top: 80px; overflow: hidden;
+}
+.jrmt .img{
+	margin-top: 15px;
+}
+.jrmt .mtlist{
+	margin-top: 25px; width: 115%;
+}
+.jrmt .mtlist a{
+	margin: 0 80px 25px 0;display: inline-block;
+}
+.jrmt .newslist{
+	margin-top: 25px;
+}
+.jrmt .newslist .hd{
+	font-size: 32px; margin-top: 40px;
+}
+.jrmt .newslist .bd{
+	margin-top: 20px;
+}
+.jrmt .newslist .bd li{
+	line-height: 44px;
+}
+.jrmt .newslist .bd li p{
+	font-size: 28px;
+}
+.jrmt .newslist .bd li span{
+	font-size: 22px; color: #a3a3a3;
+}
+
+
+/*******帮助页********/
+.header .nav li{
+	position: relative;
+}
+.header .nav li .sub{
+	position: absolute;left: 50%; margin-left: -136px; bottom: 0; margin-bottom: -80px; width: 272px;height: 60px; padding-top: 4px; background: url(../imgs/fy12.png); color: #FFFFFF; text-align: center;line-height: 60px;
+}
+.header .nav li .sub label{
+	margin: 0 10px;
+}
+.header .nav li .sub span{
+	cursor: pointer; color: #FFFFFF;
+}
+.bzy{
+	margin: 0 24px; padding: 30px 0; padding-top:0;   margin-top: 80px;
+}
+.bzy .title{
+	padding-top:30px;
+}
+.bzy .img{
+	margin-top: 15px;
+}
+.bzy .wtlist{
+	padding-top: 25px;
+}
+.bzy .wtlist .bd{
+	margin-top: 15px;
+}
+.bzy .wtlist .bd li{
+	margin-bottom: 30px;
+}
+.bzy .wtlist .bd li .tit{
+	color: #53aaff; font-size: 28px;
+}
+.bzy .wtlist .bd li p{
+	font-size: 24px; line-height: 32px; margin: 10px 0 0 45px;
+}
+.bzy .wtlist .bd li .view{
+	margin-top: 50px;
+}
+.bzy .wtlist .bd li .view .text{
+	margin-left: 45px;
+}
+.bzy .wtlist .bd li .view .img{
+	margin-top: 35px;height: auto;overflow: hidden;
+}
+.bzy .wtlist .bd li span{
+	color: #aaaaaa;
+}

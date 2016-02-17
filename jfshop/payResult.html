@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=750" />
+        <!--,user-scalable=no-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="format-detection" content="telephone=no">
+        <title>{$t}</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/ios.js"></script>
+
+        <script type="text/javascript">
+            var cH = document.documentElement.clientHeight;
+
+            var result = 0;
+            var susText = '小主，正在为您打包，<br>您可进入肌肤管家App"我的订单"查询快递单号！<br><br>备注：新用户登陆账号为注册手机号码，<br>初始密码：000000。<br>';
+            var susTextF = '小主，<br>快到肌肤管家App，查看我的订单<br>备注：新用户登陆账号为注册手机号码，<br>初始密码为000000。';
+            var orderNo = 342432432432432432;
+            $(function () {
+                $(".layout").height(cH);
+
+                //判断成功失败更换背景
+                result==0?successP():failedP();
+
+                $(".closeTop").click(function(){
+                    $(".topM").css("display","none");
+                    $(".topMask").css("display","none");
+                })
+
+            });
+
+            function successP(){
+                $(".pageBg").removeClass("payFbg").addClass("paySbg");
+                $(".resultText").html("支付成功");
+                $(".orderRNo").html("订单号为:" + orderNo);
+                $(".infoText p").html(susText);
+            }
+            function failedP(){
+                $(".pageBg").removeClass("paySbg").addClass("payFbg");
+                $(".resultText").html("支付失败");
+                $(".orderRNo").html("");
+                $(".infoText p").html(susTextF);
+            }
+        </script>
+        <style>
+            .layout {
+                /*overflow: hidden;*/
+                height: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="layout">
+            <div class="pageBg">
+                <div class="topM">
+                    <div class="btn-download">
+                        <a href="#">立即下载</a>
+                    </div>
+                    <p class="closeTop">X</p>
+                    <p class="downloadText">
+                        下载肌肤管家APP<br>
+                        查看更多宝贝
+                    </p>
+                </div>
+            </div>
+
+            <div >
+                <p class="resultText"></p>
+                <p class="orderRNo"></p>
+            </div>
+            <div class="infoText">
+                <P></P>
+            </div>
+        </div>
+        <div class="topMask"></div>
+    </body>
+</html>
+

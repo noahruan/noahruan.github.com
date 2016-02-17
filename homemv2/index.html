@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=640" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="">
+<meta name="format-detection" content="telephone=no">
+<title>肌肤管家SkinRun智能皮肤测试仪</title>
+<link rel="stylesheet" href="css/jquery.fullPage-2.1.9.css">
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.placeholder.js"></script>
+<script type='text/javascript' src="js/jquery.fullPage.min.js"></script>
+<script type="text/javascript" src="js/ios.js"></script>
+<script type="text/javascript" src="js/addons.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- <script src="js/jquery.min.js"></script> -->
+	<script src="js/bootstrap.min.js"></script>
+<script>
+$(function(){
+	$('.page-wp').fullpage({
+		//sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+		anchors: ['page1', 'page2', 'page3', 'page4','page5','page6','page7','page8'],
+		'navigation': true,
+		'navigationPosition': 'right',
+		//'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
+		afterLoad: function(anchorLink, index){
+		
+		//alert(index);
+			if(index == 1){
+				$('.header').removeClass('header2');
+			}
+			if(index == 2){
+				$('.header').addClass('header2');
+			}
+			if(index == 3){
+				$('.header').removeClass('header2');
+			}
+			if(index == 4){
+				$('.header').removeClass('header2');
+			}
+			if(index == 5){
+				$('.header').addClass('header2');
+			}
+			if(index == 6){
+				$('.header').removeClass('header2');
+			}
+			if(index == 7){
+				$('.header').addClass('header2');
+			}
+			if(index == 8){
+				$('.header').addClass('header2');
+			}
+		},
+		onLeave: function(index, direction){
+			/*if(index == '2'){
+				$('.section2').find('p').delay(500).animate({
+					left: '-120%'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == '3'){
+				$('.section3').find('p').delay(500).animate({
+					bottom: '-120%'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == '4'){
+				$('.section4').find('p').fadeOut(2000);
+			}*/
+		}
+	});
+})
+</script>
+
+</head>
+
+<body>
+	<div class="header header-fixed">
+    	<div class="logo">
+        	<a href="http://www.skinrun.me"><img src="imgs/logo1.png"></a></div>
+        <div class="nav">
+        	<li>
+            	<a class="a1 selected" href="#page2">功能</a>
+            </li>
+        	<li>
+            	<a class="a1" href="media.html">媒体报道</a>
+            </li>
+        	<li>
+            	<a class="a1" href="help.html">帮助</a>
+            </li>
+        	<li>
+            	<a href="http://www.skinrun.cn/mobile/category.php?c_id=1" class="btn a1">立即购买</a>
+            </li>
+        </div>
+    </div>
+    <div class="page-wp">
+
+		<div id="myCarousel" class="section carousel slide page">
+
+			<!-- 轮播（Carousel）指标 -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+			</ol>
+
+			<!-- 轮播（Carousel）项目 -->
+			<!-- .carousel-inner > .item CSS项目控制翻页效果速度 -->
+			<div class="carousel-inner " style="height: 100%;">
+
+   				<div class="item active page page1">
+   					<div class="text">
+   						<h2><img src="imgs/img1.png"/></h2>
+   						<h4>测肤神器，开启美丽之旅</h4>
+   						<div class="btn">
+   						<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.beabox.hjy.tt">立即下载</a>
+   						</div>
+					</div>
+   					<div class="img">
+   						<img src="imgs/img2.png" />
+   					</div>
+
+					<div class="arrow animatable" style="position: absolute;bottom: 100px;left: 22.5em;"><img src="imgs/imgarr.png">
+					</div>
+   				</div>
+
+				<div class="item page pageb1">
+					<div class="b1leftpart">
+						<h1 class="b1text b1text1 animatable"><img class="" src="imgs/btext1.png"></h1>
+						<h3 class="b1text b1text2"><img class="animatable" src="imgs/btext2.png"></h3>
+						<div class="b1img"><img class=" page1animation" class="b1text3 animatable" src="imgs/btext3.png"></div>
+					</div>
+					<div class="arrow animatable" style="position: absolute;bottom: 100px;left: 22.5em;"><img src="imgs/imgarr.png">
+					</div>
+				</div>
+
+
+				<!-- 轮播（Carousel）导航 -->
+				<a class="carousel-control left" href="#myCarousel"
+			   		data-slide="prev">&lsaquo;&nbsp;V1系列</a>
+				<a class="carousel-control right" href="#myCarousel"
+			   		data-slide="next">V2系列 &rsaquo;</a>
+			</div>
+		</div>
+   		<!--//page1-->
+
+		<div class="section">
+   			<div class="page page2 productlist1">
+   				<div class="text">
+   					<h3>肌肤管家</h3>
+   					<h2>开启全新肌肤之旅</h2>
+   					<h4><img src="imgs/img3.png"/></h4>
+   				</div>
+   				<div class="img animatable">
+   					<img src="imgs/img4.png"/>
+   				</div>
+				<div class="btn">
+					<a href="http://www.skinrun.cn">立即购买</a>
+				</div>
+   			</div>
+
+			<div class="page pageb2 productlist2">
+				<div class="container">
+					<div class="b2leftpart col-sm-6 col-xs-6 col-md-6 col-lg-6"></div>
+					<div class="text b2rightpart col-sm-4 col-xs-4 col-md-4 col-lg-4">
+						<div class="textlist ub ub-ver text-left">
+							<div><img class="textimg b2text1 animatable"  src="imgs/b2text1.png"></div>
+							<div><img class="textimg b2text2 animatable"  src="imgs/b2text2.png"></div>
+						</div>
+
+						<div class="imgslist ub ub-ver text-left">
+							<div><img class="imgstandard  b2img1 animatable"  src="imgs/b2img1.png"></div>
+							<div><img class="imgstandard  b2img2 animatable"  src="imgs/b2img2.png"></div>
+							<div><img class="imgstandard b2img3 animatable"  src="imgs/b2img3.png"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+   		<!--//page2-->
+
+		<div class="section">
+			<div class="page page3 productlist1">
+				<div class="text">
+					<div class="text-img">
+						<img src="imgs/img5.png"/>
+					</div>
+					<h4>提供专业意见护肤指导，成为您贴身的护肤顾问</h4>
+					<h3>一键检测您的肌肤要素</h3>
+				</div>
+				<div class="img1">
+					<img src="imgs/img6.png"/>
+				</div>
+				<div class="img2 animatable">
+					<img src="imgs/img7.png"/>
+				</div>
+			</div>
+
+			<div class="page pageb3 productlist2">
+				<div class="">
+					<div class="maintext">
+						<div><img class="maint1 animatable" src="imgs/b3text1.png" /></div>
+						<div><img class="maint2 animatable" src="imgs/b3text2.png" /></div>
+					</div>
+
+					<img class="local_e animatable" src="imgs/b3text3.png "/>
+					<img class="surrounding_e animatable" src="imgs/b3text4.png"/>
+
+					<div class="detaillist">
+						<ul class="dul animatable">
+							<li class="dlist1 animatable">
+								<img class="line1" src="imgs/b3text5.png"/>
+								<img class="line2" src="imgs/b3text6.png"/>
+								<img class="line3" src="imgs/b3text7.png"/>
+							</li>
+							<li class="dlist2 animatable">
+								<img class="line1" src="imgs/b3text8.png"/>
+								<img class="line2" src="imgs/b3text9.png"/>
+								<img class="line3" src="imgs/b3text10.png"/>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+   		<!--//page3-->
+
+		<div class="section">
+			<div class="page page4 productlist1">
+				<div class="img">
+					<div class="img1">
+					</div>
+					<div class="img2 animatable">
+					</div>
+				</div>
+				<div class="text">
+					<h2>精准测试  智能分析</h2>
+					<h4>结合年龄、肤质、地域及环境指数的SkinRun智能算法<br/>实时掌握肌肤真实地状况</h4>
+				</div>
+			</div>
+
+			<div class="page pageb4 productlist2">
+				<div class="">
+					<div class="b4right text-right">
+						<div><img class="b4text1 animatable" src="imgs/b4text1.png"/></div>
+						<div><img class="b4text2 animatable" src="imgs/b4text2.png"/></div>
+						<div><img class="b4text3 animatable" src="imgs/b4text3.png"/></div>
+					</div>
+					<div class="b4left text-left">
+						<div class="b4mobile img222"><img class="b4img2 animatable" src="imgs/b4img2.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+   		<!--//page4-->
+
+		<div class="section">
+			<div class="page page5 productlist1">
+				<div class="img animatable">
+					<img src="imgs/img10.png"/>
+				</div>
+				<div class="text">
+					<h2>深度报告</h2>
+					<h4>周月季皮肤深度报告分析<br />
+						基于测试的曲线变化纪录<br />
+						护肤专家实时呵护您的肌肤</h4>
+				</div>
+			</div>
+
+			<div class="page pageb5 productlist2">
+
+				<div class="b5ltext">
+					<div><img class="b5text1 animatable" src="imgs/b5text1.png"/>
+					</div>
+					<div style="margin-top: .5em;"><img class="b5text2 animatable" src="imgs/b5text2.png"/>
+					</div>
+					<div style="margin-top: .5em;"><img class="b5text3 animatable"src="imgs/b5text3.png"/>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="b5left  text-left col-sm-4 col-xs-4 col-md-4 col-lg-4">
+						<div class="b5lcircle">
+							<ul>
+								<li class="b5list1">
+									<img class="b5text4 animatable" src="imgs/b5text4.png"/>
+									<img class="b5img1 animatable" id="b5img11" src="imgs/b5img1.png" />
+								</li>
+								<li class="b5list2">
+									<img class="b5text5 animatable" src="imgs/b5text5.png"/>
+									<img class="b5img1 animatable" id="b5img12" src="imgs/b5img1.png" />
+								</li>
+								<li class="b5list3">
+									<img class="b5text6 animatable" src="imgs/b5text6.png"/>
+									<img class="b5img2 animatable" id="b5img21" src="imgs/b5img2.png" />
+								</li>
+								<li class="b5list4">
+									<img class="b5text7 animatable" src="imgs/b5text7.png"/>
+									<img class="b5img2 animatable" id="b5img22" src="imgs/b5img2.png" />
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="b5right col-sm-6 col-xs-6 col-md-6 col-lg-6 wapper">
+						<div class="img222"><img class="b5img3 animatable" src="imgs/b5img3.png"/></div>
+					</div>
+				</div>
+			</div>
+		</div>
+   		<!--//page5-->
+
+		<div class="section">
+			<div class="page page6 productlist1">
+				<div class="img1 animatable">
+					<img src="imgs/img11.png"/>
+				</div>
+				<div class="text">
+					<h2>新增面膜测试功能</h2>
+				</div>
+				<div class="img2 ">
+					<img src="imgs/img12.png"/>
+				</div>
+			</div>
+
+			<div class="page pageb6 productlist2">
+				<div class="">
+					<p><img class="b6img1 animatable" src="imgs/b6img1.png"/>
+					</p>
+					<p><img class="b6text1 animatable" src="imgs/b6text1.png"/>
+					</p>
+					<div>
+						<ul class="b6flist">
+							<li style="display: inline-block">
+								<img class="b6img2  b6i2 animatable" src="imgs/b6img2.png"/>
+							</li>
+							<li style="display: inline-block">
+								<img class="b6img2 b6i3 animatable" src="imgs/b6img3.png"/>
+							</li>
+							<li style="display: inline-block">
+								<img class="b6img2 b6i4 animatable" src="imgs/b6img4.png"/>
+							</li>
+							<li style="display: inline-block">
+								<img class="b6img2 b6i5 animatable" src="imgs/b6img5.png"/>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+   		<!--//page6-->
+
+		<div class="section">
+			<div class="page page7 productlist1">
+				<div class="text">
+					<h4>立即下载肌肤管家</h4>
+				</div>
+				<div class="img">
+					<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.beabox.hjy.tt" class="img-ios animatable">
+						<img src="imgs/img13.png" />
+					</a>
+					<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.beabox.hjy.tt" class="img-android animatable">
+						<img src="imgs/img14.png" />
+					</a>
+				</div>
+			</div>
+
+			<div class="page pageb7 productlist2">
+				<div class="setTop2">
+					<div class="b7text">
+						<div><img class="b7text1 animatable" src="imgs/b7text1.png"/>
+						</div>
+						<div><img class="b7text2 animatable" src="imgs/b7text2.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+   		<!--//page7-->
+
+   		<div class="section page page8 extra">
+   			<div class="img">
+   				<img src="imgs/img15.png"/>
+   			</div>
+   			<div class="text">
+   				<h2>新增面膜测试功能</h2>
+   				<h4>一键测试肌肤水油弹性<br />
+					基于年龄肤质和环境因素的护肤建议<br />
+					周月季长期皮肤数据变化记录<br />
+					专业护肤建议实时指导</h4>
+   			</div>
+   			<div class="contact">
+   				<h3>联系方式</h3>
+   				<h4>周一至周日 10：00 - 21：00</h4>
+   				<div class="tel">
+   					400 003 7993
+   				</div>
+   			</div>
+   		</div>
+   		<!--//page8-->
+    </div>
+</div>
+	<script>
+		$(function() {
+			activePage();
+
+			$('#myCarousel').on('slide.bs.carousel', function() {
+				activePage2();
+			});
+
+			// var clientW = document.documentElement.clientWidth;
+//			var clientH = document.documentElement.clientHeight;
+//			var eHeight = clientH*0.14;
+//			var eHeight2 = clientH*0.1;
+//
+//			$(".setTop").css('margin-top',eHeight);
+//			$(".setTop2").css('margin-top',eHeight2);
+		});
+
+		function activePage() {
+			if ($('.page1').hasClass('active')) {
+				firstList();
+			}
+			if ($('.pageb1').hasClass('active')) {
+				secondList();
+			}
+		}
+
+		function activePage2() {
+			if ($('.page1').hasClass('active')) {
+				secondList();
+			}
+			if ($('.pageb1').hasClass('active')) {
+				firstList();
+			}
+		}
+
+		function firstList() {
+
+			if (!$(".productlist1").hasClass("productshow")) {
+				$(".productlist1").addClass("productshow");
+				$(".carousel-control.right").addClass("productshow");
+			}
+			if ($(".productlist1").hasClass("producthide")) {
+				$(".productlist1").removeClass("producthide");
+				$(".carousel-control.right").removeClass("producthide");
+			}
+			if ($(".productlist2").hasClass("productshow")) {
+				$(".productlist2").removeClass("productshow");
+				$(".carousel-control.left").removeClass("productshow");
+			}
+			if (!$(".productlist2").hasClass("producthide")) {
+				$(".productlist2").addClass("producthide");
+				$(".carousel-control.left").addClass("producthide");
+			}
+		};
+
+		function secondList() {
+			if (!$(".productlist2").hasClass("productshow")) {
+				$(".productlist2").addClass("productshow");
+				$(".carousel-control.left").addClass("productshow");
+			}
+			if ($(".productlist2").hasClass("producthide")) {
+				$(".productlist2").removeClass("producthide");
+				$(".carousel-control.left").removeClass("producthide");
+			}
+			if ($(".productlist1").hasClass("productshow")) {
+				$(".productlist1").removeClass("productshow");
+				$(".carousel-control.right").removeClass("productshow");
+			}
+			if (!$(".productlist1").hasClass("producthide")) {
+				$(".productlist1").addClass("producthide");
+				$(".carousel-control.right").addClass("producthide");
+			}
+		};
+	</script>
+	<!--让BOOTSTRAP默认SLIDER支持触屏设备-->
+	<!--<script type="text/javascript">-->
+		<!--var isTouch=('ontouchstart' in window);-->
+		<!--if(isTouch){-->
+			<!--$(".carousel").on('touchstart', function(e){-->
+				<!--var that=$(this);-->
+				<!--var touch = e.originalEvent.changedTouches[0];-->
+				<!--var startX = touch.pageX;-->
+				<!--var startY = touch.pageY;-->
+				<!--$(document).on('touchmove',function(e){-->
+					<!--touch = e.originalEvent.touches[0] ||e.originalEvent.changedTouches[0];-->
+					<!--var endX=touch.pageX - startX;-->
+					<!--var endY=touch.pageY - startY;-->
+					<!--if(Math.abs(endY)<Math.abs(endX)){-->
+						<!--if(endX > 10){-->
+							<!--$(this).off('touchmove');-->
+							<!--that.carousel('prev');-->
+						<!--}else if (endX < -10){-->
+							<!--$(this).off('touchmove');-->
+							<!--that.carousel('next');-->
+						<!--}-->
+						<!--return false;-->
+					<!--}-->
+				<!--});-->
+			<!--});-->
+			<!--$(document).on('touchend',function(){-->
+				<!--$(this).off('touchmove');-->
+			<!--});-->
+		<!--}-->
+	<!--</script>-->
+</body>
+</html>
+

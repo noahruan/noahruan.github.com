@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=yes">
+        <title>皮肤测试</title>
+        <META NAME="KEYWORDS" CONTENT="皮肤测试,上海皮肤测试,肌肤管家">
+        <META name="description" CONTENT="皮肤测试,上海皮肤测试,肌肤管家">
+        <link rel="stylesheet" href="css/jquery.fullPage-2.1.9.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!--[if lt IE 9]>
+        <script src="js/html5.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+        <script type='text/javascript' src='js/responsive.js'></script>
+        <script type='text/javascript' src="js/jquery.fullPage.min.js"></script>
+        <script type="text/javascript" src="js/addons.js"></script>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- <script src="js/jquery.min.js"></script> -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <script>
+            $(function() {
+                $('.page-wrap').fullpage({
+                    //sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+                    anchors : ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8', 'pageb2', 'pageb3', 'pageb4', 'pageb5', 'pageb6', 'pageb7', 'pageb8'],
+                    'navigation' : true,
+                    'navigationPosition' : 'right',
+                    //'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
+                    afterLoad : function(anchorLink, index) {
+
+                        //alert(index);
+                        if (index == 1) {
+                            $('.header').removeClass('header2');
+
+                            // $('.carousel').carousel({
+                                // interval : 3000
+                            // });
+
+                        }
+                        if (index == 2) {
+                            $('.header').addClass('header2');
+                        }
+                        if (index == 3) {
+                            $('.header').removeClass('header2');
+                        }
+                        if (index == 4) {
+                            $('.header').removeClass('header2');
+                        }
+                        if (index == 5) {
+                            $('.header').addClass('header2');
+                        }
+                        if (index == 6) {
+                            $('.header').removeClass('header2');
+                        }
+                        if (index == 7) {
+                            $('.header').addClass('header2');
+                        }
+                        if (index == 8) {
+                            $('.header').addClass('header2');
+                        }
+                        if (index == 9) {
+                            $('.header').removeClass('header2');
+                        }
+                        if (index == 10) {
+                            $('.header').addClass('header2');
+                        }
+                        if (index == 11) {
+                            $('.header').removeClass('header2');
+                        }
+                        if (index == 12) {
+                            $('.header').addClass('header2');
+                        }
+                        if (index == 13) {
+                            $('.header').removeClass('header2');
+                        }
+                        if (index == 14) {
+                            $('.header').removeClass('header2');
+                        }
+                        if (index == 15) {
+                            $('.header').removeClass('header2');
+                        }
+                    },
+                    onLeave : function(index, direction) {
+
+                    }
+                });
+            })
+
+        </script>
+        <style>
+            .header {
+                position: fixed;
+                width: 100%;
+                left: 0;
+                top: 0;
+                z-index: 99;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="layout">
+
+            <div class="header">
+                <div class="wrapper">
+                    <a href="http://www.skinrun.me" class="logo" title="皮肤测试"></a>
+                    <div class="nav">
+                        <ul>
+                            <li>
+                                <a href="index.html">功能</a>
+                            </li>
+                            <li>
+                                <a href="#page8">下载</a>
+                            </li>
+                            <li>
+                                <a href="help.html">帮助</a>
+                            </li>
+                            <li>
+                                <a href="report.html">媒体报道</a>
+                            </li>
+                            <li>
+                                <a href="join.html">加入</a>
+                            </li>
+                            <li class="order">
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="page-wrap">
+
+                <div id="myCarousel" class="section carousel slide">
+
+                    <!-- <div class="page page1 sectionhorizon">
+                    <div class="wrapper">
+                    <h2><img src="imgs/img4.png"></h2>
+                    <h1><img src="imgs/img5.png"></h1>
+                    <h3><img src="imgs/img6.png"></h3>
+
+                    <div class="img"><img src="imgs/img3.png"></div>
+
+                    <div class="arrow animatable"><img src="imgs/img7.png"></div>
+
+                    </div>
+                    </div>
+
+                    <div class="page pageb1 sectionhorizon">
+                    <div class="wrapper">
+                    <h1><img src="imgs/btext1.png"></h1>
+                    <h3><img src="imgs/btext2.png"></h3>
+                    <div class="img"><img src="imgs/btext3.png">
+                    <h2><img src="imgs/bproduct.png"></h2>
+                    </div>
+                    <div class="arrow animatable"><img src="imgs/img7.png"></div>
+                    </div>
+                    </div> -->
+
+                    <!-- 轮播（Carousel）指标 -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                    </ol>
+
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner ">
+
+                        <div class="item active page page1">
+                            <div class="wrapper">
+                                <h2><img src="imgs/img4.png"></h2>
+                                <h1><img src="imgs/img5.png"></h1>
+                                <h3><img src="imgs/img6.png"></h3>
+
+                                <div class="img"><img src="imgs/img3.png">
+                                </div>
+
+                                <div class="arrow animatable"><img src="imgs/img7.png">
+                                </div>
+
+                            </div>
+                            <!-- <div class="carousel-caption">
+                                标题 1
+                            </div> -->
+                        </div>
+
+                        <div class="item page pageb1">
+                            <div class="wrapper">
+                                <h1><img src="imgs/btext1.png"></h1>
+                                <h3><img src="imgs/btext2.png"></h3>
+                                <div class="img"><img src="imgs/btext3.png">
+                                    <h2><img src="imgs/bproduct.png"></h2>
+                                </div>
+                                <div class="arrow animatable"><img src="imgs/img7.png">
+                                </div>
+                            </div>
+                            <!-- <div class="carousel-caption">
+                                标题 2
+                            </div> -->
+                        </div>
+
+                    </div>
+                    
+                    <!-- 轮播（Carousel）导航 -->
+                    <a class="carousel-control left" href="#myCarousel"
+                    data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#myCarousel"
+                    data-slide="next">&rsaquo;</a>
+
+                </div>
+
+                <div class="section page page2 productlist1">
+                    <div class="wrapper">
+                        <div class="img animatable">
+                            <img src="imgs/img8.png">
+                        </div>
+                        <div class="text">
+                            <h1><img src="imgs/img9.png"></h1>
+                            <h2><img src="imgs/img10.png"></h2>
+                            <h3><img src="imgs/img11.png"></h3>
+                            <div class="attr">
+                                <img src="imgs/img12.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section page page3 productlist1">
+                    <div class="wrapper">
+                        <div class="img">
+                            <div class="img-wrap">
+                                <img src="imgs/img13.png" class="img1">
+                                <div class="pie animatable">
+                                    <img src="imgs/img47.png" class="img2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h1><img src="imgs/img14.png"></h1>
+                            <h2><img src="imgs/img15.png"></h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="section page page4 productlist1">
+                    <div class="wrapper">
+                        <div class="img animatable">
+                            <img src="imgs/img16.png">
+                        </div>
+                        <div class="text">
+                            <h1><img src="imgs/img17.png"></h1>
+                            <h2><img src="imgs/img18.png"></h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="section page page5 productlist1">
+                    <div class="wrapper">
+                        <div class="img">
+                            <img src="imgs/img19.png">
+                        </div>
+                        <div class="text">
+                            <h1><img class="img1 animatable" src="imgs/img20.png"></h1>
+                            <h2><img class="img2 animatable" src="imgs/img21.png"></h2>
+                            <h3 class="img3 animatable"><img src="imgs/img48.png"><img src="imgs/img49.png"><img src="imgs/img50.png"></h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="section page page7 productlist1">
+                    <div class="wrapper">
+                        <div class="text">
+                            <h1><img src="imgs/img30.png"></h1>
+                            <h2><img src="imgs/img31.png"></h2>
+
+                        </div>
+                        <div class="img">
+                            <img src="imgs/img51.png" class="img1 animatable">
+                            <img src="imgs/img52.png" class="img2 animatable">
+                        </div>
+                    </div>
+                </div>
+                <div class="section page page8 productlist1">
+                    <div class="wrapper">
+
+                        <div class="wrap">
+                            <h1><img src="imgs/img33.png"></h1>
+                            <h2><img src="imgs/img34.png"></h2>
+                            <div class="img">
+                                <img src="imgs/img53.png" class="img1 animatable">
+                                <img src="imgs/img54.png" class="img2 animatable">
+                                <img src="imgs/img55.png" class="img3 animatable">
+                                <img src="imgs/img56.png" class="img4 animatable">
+                                <img src="imgs/img57.png" class="img5 animatable">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="section page page6 productlist1">
+                    <div class="wrapper">
+                        <div class="text">
+                            <h1><img src="imgs/img23.png"></h1>
+                            <h2><img src="imgs/img24.png"></h2>
+                            <h3><img src="imgs/img25.png"></h3>
+                            <div class="contact"><img src="imgs/img26.png">
+                            </div>
+                        </div>
+                        <div class="down">
+                            <ul>
+                                <li>
+                                    <a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=881707446&mt=8"><img src="imgs/img27.png" class="img1 animatable"></a>
+                                </li>
+                                <li>
+                                    <a href="appdown.html"><img src="imgs/img28.png" class="img2 animatable"></a>
+                                </li>
+                            </ul>
+                            <div class="qrcode">
+                                <img src="imgs/img29.png" class="img3 animatable">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//page-->
+
+                <!--//page-wrap-->
+
+                <!--//page-wrapb-->
+
+                <div class="section page pageb2 productlist2">
+                    <div class="wrapper">
+                        <div class="img animatable">
+                            <img src="imgs/img8.png">
+                        </div>
+                        <div class="text">
+                            <h1><img src="imgs/img9.png"></h1>
+                            <h2><img src="imgs/img10.png"></h2>
+                            <h3><img src="imgs/img11.png"></h3>
+                            <div class="attr">
+                                <img src="imgs/img12.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section page pageb3 productlist2">
+                    <div class="wrapper">
+                        <div class="img">
+                            <div class="img-wrap">
+                                <img src="imgs/img13.png" class="img1">
+                                <div class="pie animatable">
+                                    <img src="imgs/img47.png" class="img2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h1><img src="imgs/img14.png"></h1>
+                            <h2><img src="imgs/img15.png"></h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="section page pageb4 productlist2">
+                    <div class="wrapper">
+                        <div class="img animatable">
+                            <img src="imgs/img16.png">
+                        </div>
+                        <div class="text">
+                            <h1><img src="imgs/img17.png"></h1>
+                            <h2><img src="imgs/img18.png"></h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="section page pageb5 productlist2">
+                    <div class="wrapper">
+                        <div class="img">
+                            <img src="imgs/img19.png">
+                        </div>
+                        <div class="text">
+                            <h1><img class="img1 animatable" src="imgs/img20.png"></h1>
+                            <h2><img class="img2 animatable" src="imgs/img21.png"></h2>
+                            <h3 class="img3 animatable"><img src="imgs/img48.png"><img src="imgs/img49.png"><img src="imgs/img50.png"></h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="section page pageb6 productlist2">
+                    <div class="wrapper">
+                        <div class="text">
+                            <h1><img src="imgs/img30.png"></h1>
+                            <h2><img src="imgs/img31.png"></h2>
+
+                        </div>
+                        <div class="img">
+                            <!-- <img src="imgs/imgb6.png" class="img1 animatable"> -->
+                            <img src="imgs/img52.png" class="img2 animatable">
+                        </div>
+                    </div>
+                </div>
+                <div class="section page pageb7 productlist2">
+                    <div class="wrapper">
+
+                        <div class="wrap">
+                            <h1><img src="imgs/img33.png"></h1>
+                            <h2><img src="imgs/img34.png"></h2>
+                            <div class="img">
+                                <img src="imgs/img53.png" class="img1 animatable">
+                                <img src="imgs/img54.png" class="img2 animatable">
+                                <img src="imgs/img55.png" class="img3 animatable">
+                                <img src="imgs/img56.png" class="img4 animatable">
+                                <img src="imgs/img57.png" class="img5 animatable">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--//page-->
+            </div>
+        </div>
+
+        <script>
+        /*$(function() {
+                        $('.carousel').carousel({
+                            interval : 3000
+                        });
+                    });*/
+        
+        $(function() {
+            
+            $(".productlist2").hide();
+             
+        }); 
+            
+            
+            
+        </script>
+
+    </body>
+</html>
+

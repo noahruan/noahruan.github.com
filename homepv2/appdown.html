@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>肌肤管家SkinRun 女生的第一台智能肌肤测试仪</title>
+    <script type="text/javascript">
+        // 获取终端的相关信息
+        var Terminal = {
+            // 辨别移动终端类型
+            platform : function(){
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    // android终端或者uc浏览器
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                    // 是否为iPhone或者QQHD浏览器
+                    iPhone: u.indexOf('iPhone') > -1 ,
+                    // 是否iPad
+                    iPad: u.indexOf('iPad') > -1
+                };
+            }(),
+            // 辨别移动终端的语言：zh-cn、en-us、ko-kr、ja-jp...
+            language : (navigator.browserLanguage || navigator.language).toLowerCase()
+        }
+
+        // 如果要分渠道，也是可以的，渠道区分：?from=xx
+        var From = (function(){
+            var searchInfo = location.search.substr(1).split('&'),item,from;
+            for(var i= 0,len=searchInfo.length;len > 1 && i<len;i++){
+                item = searchInfo[i].split('=');
+                if(item[0] == 'from') {
+                    from = item[1];
+                    break;
+                }
+            }
+            return from;
+        })();
+
+        // 根据不同的终端，跳转到不同的地址
+        //var theUrl = 'https://itunes.apple.com/cn/app/id881707446';
+	var theUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.beabox.hjy.tt';
+        // android系统APP
+        if(Terminal.platform.android){
+            // 这里区分渠道
+            switch(From){
+                case 'baidu':
+                    theUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.beabox.hjy.tt';
+                    break;
+                case 'google':
+                    theUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.beabox.hjy.tt';
+                    break;
+                default:
+                    theUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.beabox.hjy.tt'
+            }
+        }
+
+        location.href = 'http://mp.weixin.qq.com/mp/redirect?url=' + theUrl;
+    </script>
+</head>
+<body>
+    <!--
+
+    -->
+</body>
+</html>

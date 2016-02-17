@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>{$t}</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+            background-color: #2a2a2a;
+        }
+    </style>
+</head>
+
+<body class="layout">
+    <div>
+        <div class="rheader">
+            <div class="headermask"></div>
+            <p>红包规则</p>
+            <div class="downicon"></div>
+        </div>
+        <div class="detail">
+            <ul>
+                <li>
+                    怎么获得红包?
+                    <p class="ruleP">在福利社成功下单后获得；<br>抢微信朋友分享的红包获得。</p>
+                </li>
+                <li>
+                    红包可以做什么？
+                    <p class="ruleP">可以抵扣在线支付时的实际支付金额。</p>
+                </li>
+                <li>
+                    一个红包能拆开多次使用吗？
+                    <p class="ruleP">不能，一个红包只能一次性使用，不能分开使用。</p>
+                </li>
+                <li>
+                    下单的时候使用了红包，但是后来订单取消了，
+                    红包还会返还吗？
+                    <p class="ruleP">不能，一个红包只能一次性使用，不能分开使用。</p>
+                </li>
+                <li >
+                    返红包活动，红包领取规则是什么？
+                    <p class="ruleP">注册用户红包直接发送至用户账户里；<br>非注册用户红包账户手机为账户，密码请通过找回密码找回。</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/ios.js"></script>
+    <script>
+//        var ch = document.documentElement.clientHeight;
+//        $(".layout").css("min-height",ch);
+
+        $(".downicon").click(function(){
+            androidFun();
+        });
+        function androidFun(){
+                alert(111)
+        }
+    </script>
+</body>
+</html>
+

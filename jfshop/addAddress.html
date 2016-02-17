@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=750,user-scalable=no" />
+        <!--,user-scalable=no-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="format-detection" content="telephone=no">
+        <title>{$t}</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/ios.js"></script>
+
+        <script src="js/mobiscroll.core-2.6.2.js" type="text/javascript"  rel="stylesheet"></script>
+        <link href="css/mobiscroll.core-2.6.2.css" rel="stylesheet" type="text/css" />
+        <script src="js/mobiscroll.list-2.6.2.js" type="text/javascript"  rel="stylesheet"></script>
+
+        <script type="text/javascript">
+            var cH = document.documentElement.clientHeight;
+
+            $(function () {
+                $(".layout").css("min-height",cH);
+                $(".submit").click(function(){
+                    confirm("ok");
+                });
+                $(".btn-sRight").click(function(){
+                    confirm("ok");
+                });
+                $(".btn-back").click(function(){
+                    confirm("ok");
+                });
+
+//                省市区控制JS
+                var opt = {
+                };
+                opt.tree_list = {
+                    preset : 'list',
+//                    labels: ['Region', 'Country', 'City','Town']
+                    labels: [' ', ' ', ' ',' ']
+                };
+                <!--Script-->
+                $('select.changes').bind('change', function() {
+                    var demo = $('#demo').val();
+                    $(".demos").hide();
+                    if (!($("#demo_"+demo).length))
+                        demo = 'default';
+
+                    $("#demo_" + demo).show();
+                    $('#test_'+demo).val('').scroller('destroy').scroller($.extend(opt[$('#demo').val()], { theme: $('#theme').val(), mode: $('#mode').val(), display: $('#display').val(), lang: $('#language').val() }));
+                });
+                $('#demo').trigger('change');
+
+                $("#areaS").click(function(){
+                    $(".myMask").css("display","block");
+                    $(".areaList").removeClass("hide");
+                });
+                $("#areaSelect").click(function(){
+
+                    var listNum = $("#test_tree_list_dummy").val();
+                    var listNumArray = $("#test_tree_list_dummy").val().split(" ");
+                    var x = listNumArray[0];
+                    var y = listNumArray[1];
+                    var z = listNumArray[2];
+
+                    if( listNum == 0 ){
+                        $("#areaInput").val("上海市 嘉定区 XX镇");
+                        $(".myMask").css("display","none");
+                        $(".areaList").addClass("hide");
+                    }else{
+                        var fArea = $(".cityName p").eq(x).html();
+                        var sArea = $(".c" + x + " " + "span").eq(y).html();
+                        var tArea = $(".c" + x + " .l"+y + " li").eq(z).html();
+                        listNum = fArea + " " + sArea + " " + tArea;
+                        $(".myMask").css("display","none");
+                        $(".areaList").addClass("hide");
+                        $("#areaInput").val(listNum);
+                    }
+                });
+
+            });
+        </script>
+        <style>
+            .layout{
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="layout">
+            <!--<div class="header">-->
+                <!--<div class="btn-back"></div>-->
+                <!--<P>添加收货地址</P>-->
+                <!--<div class="btn-sRight"></div>-->
+            <!--</div>-->
+            <div class="sjyz-form">
+                <form action="" method="post">
+                    <ul>
+                        <li>
+                            <input type="text" class="text" placeholder="请输入收货人姓名" name="" id="" value=""/>
+                        </li>
+                        <li >
+                            <!--<div class="inputThread"></div>-->
+                            <input type="text" class="text" placeholder="请输入手机号码" name="" id="" value=""/>
+                        </li>
+                        <li id="areaS">
+                            <!--<div class="inputThread"></div>-->
+                            <input type="text" class="text" placeholder="省，市，区" name="" id="areaInput" value="" readonly required/>
+                        </li>
+                        <li style="height: 15em">
+                            <!--<div class="inputThread"></div>-->
+                            <!--<input type="text" class="text detailAdd" placeholder="详细地址" name="" id="" value=""/>-->
+                            <textarea class="text detailAdd" placeholder="详细地址"></textarea>
+                        </li>
+                    </ul>
+                    <button class="submit"/>保存</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="areaList hide" >
+            <!--滑块设定-->
+            <div class="confirm text-right">
+                <button type="submit" id="areaSelect">完成</button>
+            </div>
+            <div class="detailList text-center">
+                <div class="content">
+                    <div style="display: none">
+                        <label for="theme">Theme</label>
+                        <select name="theme" id="theme" class="changes">
+                            <option value="default">Default</option>
+                        </select>
+                    </div>
+                    <div style="display: none">
+                        <label for="mode">Mode</label>
+                        <select name="mode" id="mode" class="changes">
+                            <option value="scroller">Scroller</option>
+                        </select>
+                    </div>
+                    <div style="display: none">
+                        <label for="display">Display</label>
+                        <select name="display" id="display" class="changes">
+                            <option value="inline">Inline</option>
+                        </select>
+                    </div>
+                    <div style="display: none">
+                        <label for="language">Language</label>
+                        <select name="language" id="language" class="changes">
+                            <option value="zh">Chinese</option>
+                            <!--Lang-->
+                        </select>
+                    </div>
+                    <div style="display: none">
+                        <label for="demo">Demo</label>
+                        <select name="demo" id="demo" class="changes">
+                            <option value="tree_list" >Tree List</option>
+                            <!--Demos-->
+                        </select>
+                    </div>
+
+                    <!--滑轮列表-->
+                    <div data-role="fieldcontain" class="demos fieldcontain" id="demo_tree_list" >
+                        <label for="test_tree_list_dummy"></label>
+                        <ul id="test_tree_list">
+                            <li class="cityName c0"><p>上海市上海市上海市</p>
+                                <ul>
+                                    <li class="l0"><span>嘉定区嘉定区嘉定区</span>
+                                        <ul>
+                                            <li>XX镇XX镇XX镇XX镇</li>
+                                            <li>OO镇OO镇OO镇OO镇</li>
+                                            <li>FF镇</li>
+                                            <li>TT镇</li>
+                                            <li>ZZ镇ZZ镇ZZ镇ZZ镇ZZ镇</li>
+                                        </ul>
+                                    </li>
+                                    <li class="l1"><span>浦东新区浦东新区浦东新区</span>
+                                        <ul>
+                                            <li>XX镇</li>
+                                            <li>OO镇</li>
+                                            <li>FF镇</li>
+                                            <li>TT镇</li>
+                                            <li>ZZ镇</li>
+                                        </ul>
+                                    </li>
+                                    <li class="l2"><span>静安区</span>
+                                        <ul>
+                                            <li>XX镇</li>
+                                            <li>OO镇</li>
+                                            <li>FF镇</li>
+                                            <li>TT镇</li>
+                                            <li>ZZ镇</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>杨浦区</span>
+                                        <ul>
+                                            <li>XX镇</li>
+                                            <li>OO镇</li>
+                                            <li>FF镇</li>
+                                            <li>TT镇</li>
+                                            <li>ZZ镇</li>
+                                        </ul>
+                                    </li>
+                                    <li class="l3"><span>松江区</span>
+                                        <ul>
+                                            <li>XX镇</li>
+                                            <li>OO镇</li>
+                                            <li>FF镇</li>
+                                            <li>TT镇</li>
+                                            <li>ZZ镇</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>虹口区</span>
+                                        <ul>
+                                            <li>XX镇</li>
+                                            <li>OO镇</li>
+                                            <li>FF镇</li>
+                                            <li>TT镇</li>
+                                            <li>ZZ镇</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>普陀区</span>
+                                        <ul>
+                                            <li>XX镇</li>
+                                            <li>OO镇</li>
+                                            <li>FF镇</li>
+                                            <li>TT镇</li>
+                                            <li>ZZ镇</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>黄埔区</span>
+                                        <ul>
+                                            <li>XX镇</li>
+                                            <li>OO镇</li>
+                                            <li>FF镇</li>
+                                            <li>TT镇</li>
+                                            <li>ZZ镇</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>长宁区</span>
+                                        <ul>
+                                            <li>XX镇</li>
+                                            <li>OO镇</li>
+                                            <li>FF镇</li>
+                                            <li>TT镇</li>
+                                            <li>ZZ镇</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>金山区</span>
+                                        <ul>
+                                            <li>XX镇</li>
+                                            <li>OO镇</li>
+                                            <li>FF镇</li>
+                                            <li>TT镇</li>
+                                            <li>ZZ镇</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cityName c1"><p>江苏省江苏省江苏省</p>
+                                <ul>
+                                    <li><span>南京南京南京南京南京</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>徐州</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>无锡</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>苏州</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>常州</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="cityName c2"><p>甘肃省</p>
+                                <ul>
+                                    <li><span>兰州市</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>嘉峪关市</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>金昌市</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>白银市</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>天水市</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>酒泉市</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>张掖市</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>武威市</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>庆阳市</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>临夏州</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>甘南州</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                    <li><span>平凉市</span>
+                                        <ul>
+                                            <li>XX区</li>
+                                            <li>OO区</li>
+                                            <li>FF区</li>
+                                            <li>TT区</li>
+                                            <li>ZZ区</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <!--Html-->
+                </div>
+            </div>
+        </div>
+        <div class="myMask"></div>
+    </body>
+</html>
+

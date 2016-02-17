@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=750" />
+        <!--,user-scalable=no-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="format-detection" content="telephone=no">
+        <title>{$t}</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/ios.js"></script>
+
+
+        <script>
+            //定义获取用户及产品对象
+
+            var selectedAdd = {
+                name:["马新新","新马马","马新马"],
+                tel:["136768888881","136768999991","136768000001"],
+                add:["上海市徐汇区镇新街道九宫山路8277弄89号鸟叔公寓17栋13号-19号709室201",
+                    "上海市徐汇区镇新街道九宫山路8277弄89号鸟叔公寓17栋13号-19号709室202",
+                    "上海市徐汇区镇新街道九宫山路8277弄89号鸟叔公寓17栋13号-19号709室203"]
+            };
+
+
+            var cartArray = {
+                pName:["这里是产品一这里是产品1这里是产品一这里是产品1这里是产品一",
+                    "这里是产品2这里是产品2这里是产品2这里是产品2这里是产品2",
+                    "这里是产品2-1这里是产品2这里是产品2这里是产品2这里是产品2",
+                    "这里是产品2-2这里是产品2这里是产品2这里是产品2这里是产品2",
+                    "这里是产品3这里是产品三这里是产品3这里是产品三这里是产品3"],
+                pPriceNow:["58","48","46","44","68"],
+                pPriceOriginal:["158","148","146","144","168"],
+                pCount:["8","4","3","2","1"],
+                proImg: ["url('imgs/product1.png')",
+                    "url('imgs/product3.png')",
+                    "url('imgs/product3.png')",
+                    "url('imgs/product3.png')",
+                    "url('imgs/product3.png')"]
+            };
+        </script>
+        <script type="text/javascript" src="js/writePay.js"></script>
+
+        <script type="text/javascript">
+            var cH = document.documentElement.clientHeight;
+
+            var tolCost = 1669;
+            var saveCost = 169;
+
+            $(function () {
+                finText();
+
+                $(".layout").css("min-height",cH);
+
+                //地址选择
+                $(".addressList").click(function(){
+                    $(".addressListS").css("display","block");
+                    $(".myMask").css("display","block");
+                });
+                $(".addRPartSList li").click(function(){
+                    $(".addRPart").html($(this).html());
+                    $(".addressListS").css("display","none");
+                    $(".myMask").css("display","none");
+                });
+
+                $(".myMask").click(function(){
+                    $(this).css("display","none");
+                    $(".addressListS").css("display","none");
+                });
+
+                //按钮点击
+                $(".btn-sRight").click(function(){
+                    confirm("ok");
+                });
+                $(".btn-back").click(function(){
+                    confirm("ok");
+                });
+                $(".btn-buyNow").click(function(){
+                    confirm("buyNow");
+                });
+                //产品信息显示隐藏
+                $(".sOrHList").click(function() {
+
+                   if( !$(".cListUl").hasClass("hide")){
+                       $(".cListUl").addClass("hide");
+                       $(".orderNo").addClass("hide");
+                       $(this).removeClass("rotate180T");
+                       $(this).addClass("rotate180");
+
+                   }else if($(".cListUl").hasClass("hide")){
+                       $(".cListUl").removeClass("hide");
+                       $(".orderNo").removeClass("hide");
+                       $(this).removeClass("rotate180");
+                       $(this).addClass("rotate180T");
+                   }
+                });
+
+
+                //选择支付方式，默认微信
+                var payForm = "wx";
+                $(".pDList").click(function(){
+                   $(".selectedRG").addClass("hide");
+                    $(this).children(".selectedRG").removeClass("hide");
+                    payForm = $(this).attr("value");
+                    alert(payForm);
+                });
+            });
+
+            function finText(){
+                $(".presentSign,.usedSign").html("¥");
+                $(".tolCost").html(tolCost);
+                $(".saveCost").html(saveCost);
+            }
+
+            function hidePro(){
+                $(this).addClass("r180");
+                $(this).removeClass("rotate180");
+            }
+            function showPro(){
+                $(this).addClass("r180t");
+                $(this).removeClass("rotate180T");
+            }
+        </script>
+        <style>
+            .layout{
+                background-color: #f2f2f2;
+            }
+            .btn-buy{
+                padding: 0;
+                position: static;
+                margin-top: 2em;;
+            }
+            #cList0 .cDLeft{top:0;}
+        </style>
+    </head>
+
+    <body>
+        <div class="layout">
+            <div class="addInfo">
+                <div  class="addTit"><p>&nbsp;&nbsp;收货信息</p></div>
+                <div class="addShow">
+                    <div class="addressList">
+                       <div class="addRPart">
+                        <!--JS写入-->
+                       </div>
+                       <div class="rightIcon"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="extraInfo">
+                <span class="extraText">备注:</span>
+                <div class="extraInput" contenteditable="true"><br /></div>
+            </div>
+
+
+            <div class="cartList" style="margin-top: 40px">
+                <div  class="addTit aTColor">
+                    <p>&nbsp;&nbsp;产品信息</p>
+                    <div class="sOrHList"></div>
+                </div>
+                <div class="orderNo">
+                    <span class="dNo">订单号：<span class="oND"></span></span>
+                    <span class="cTime">2015-12-01 17:10</span>
+                </div>
+               <ul class="cListUl">
+                   <!--JS写入-->
+               </ul>
+            </div>
+
+            <div class="tRecommend">
+                <div class="rTit"><h3>最省钱红包推荐</h3></div>
+                <!--有红包-->
+                <div class="ticketRD">
+                    <p class="leftIcon"></p>
+                    <a href="payResult.html">
+                        <div class="costAndTime">
+                            <p class="cost center"><span>￥</span><span>222</span></p>
+                            <p class="time center"><span>有效期:</span><span>2016-01-02到2016-01-03</span></p>
+                        </div>
+                        <p class="transIcon"></p>
+                    </a>
+                </div>
+                <!--没红包-->
+                <!--<div class="ticketRD">-->
+                    <!--<p class="leftIcon" style="visibility: hidden"></p>-->
+                    <!--<div class="costAndTime">-->
+                       <!--<p class="noTicket center">暂无红包</p>-->
+                       <!--<p class="btn-getT center"><a href="payResult.html">去领取</a></p>-->
+                    <!--</div>-->
+                    <!--<p class="transIcon" style="visibility: hidden"></p>-->
+                <!--</div>-->
+            </div>
+
+            <div class="payList">
+                <div class="addTit pTColor">
+                    <p>&nbsp;&nbsp;支付信息</p>
+                </div>
+                <ul class="payLDetail">
+                    <li class="pDList" value="wx">
+                        <div class="wIcon"></div>
+                        <p>微信支付</p>
+                        <div class="selectedRG"></div>
+                    </li>
+                    <li class="pDList" value="zfb">
+                        <div class="zIcon"></div>
+                        <p>支付宝支付</p>
+                        <div class="selectedRG hide"></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="btn-buy container">
+                <div class="btn-shouldPay col-xs-7">
+                    <div class="shouldP">
+                        <span class="payText">应付:</span>
+                        <span class="tolCostS">¥</span>
+                        <span class="tolCost"></span>
+                    </div>
+                    <div class="saveM">
+                        <span class="saveText">节省:</span>
+                        <span class="saveCostS">¥</span>
+                        <span class="saveCost"></span>
+                    </div>
+                </div>
+                <div class="btn-buyNow col-xs-5">
+                    支付
+                </div>
+            </div>
+        </div>
+
+
+        <div class="addressListS">
+                <ul class="addRPartSList">
+                    <!--JS写入-->
+                </ul>
+            </div>
+        <div class="myMask"></div>
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    <script>
+
+        $(".leftIcon").click(function(){
+            if($(".leftIcon").hasClass("notS")){
+                $(this).removeClass("notS");
+            }else{
+                $(this).addClass("notS");
+            }
+        })
+    </script>
+    </body>
+</html>
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=750" />
+        <!--,user-scalable=no-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="format-detection" content="telephone=no">
+        <title>{$t}</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/ios.js"></script>
+
+        <script type="text/javascript">
+            $(function () {
+
+                var countSurplus = [28,29];
+                var countTime =["01:32:09","00:32:08"];
+                var proImg = ["url('imgs/product1.png')","url('imgs/product2.png')"];
+                var illImg = ["url('imgs/Ill1.png')","url('imgs/Ill1.png')"];
+                for(var i=0;i<countTime.length;i++){
+                    $("#countTime" + i).html(countTime[0]);
+                    $("#countSurplus" + i).html(countSurplus[0]);
+                    $(".proPic").css("background",proImg[1]);
+                    $(".illPic").css("background",illImg[0]);
+                }
+
+
+//                购物车判断
+                var cartNum = 99;
+                if(cartNum>0 && cartNum<10){
+                    $(".cart").css("background-position","0 -100px");
+                    $(".cartNum").html(cartNum);
+                }else if(cartNum>=10){
+                    $(".cart").css("background-position","0 -100px");
+//                    $(".cartNum").
+                    $(".cartNum").html(cartNum).css("left","2.6em");
+                }else{
+                    $(".cartNum").html("");
+                    $(".cart").css("background-position","0 0");
+                }
+
+                $(".btn-sRight").click(function(){
+                    confirm("ok");
+                });
+                $(".btn-back").click(function(){
+                    confirm("ok");
+                });
+                $(".btn-addToCart").click(function(){
+                    confirm("addToCart");
+                });
+                $(".btn-buyNow").click(function(){
+                    confirm("buyNow");
+                });
+                $(".closeTop").click(function(){
+                    $(".topM").css("visibility","hidden");
+                    $(".topMask").css("visibility","hidden");
+                })
+            });
+        </script>
+        <style>
+            .btn-buy{
+                padding-right: 0;
+                padding-left: 0;
+            }
+            .cart{
+                bottom: 9em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="layout">
+            <ul>
+                <li>
+                    <div class="productPage">
+                        <div class="proPic">
+                            <div class="countTime">
+                                <p>倒计时&nbsp<span  id="countTime0"></span></p>
+                            </div>
+                            <div class="proSurplus">
+                                <P>仅剩<span id="countSurplus0"></span>件</P>
+                            </div>
+                            <div id="grad"></div>
+                        </div>
+                        <div class="proTitle">
+                            <h3>
+                                这里是标题这里是标题这里是标题这里是标题这里是标题这里是标题
+                            </h3>
+                        </div>
+                        <div class="proPrice">
+                            <span class="presentSign">¥</span>
+                            <span class="presentPrice">58</span>
+                            <span class="usedSign">¥</span>
+                            <span class="usedPrice">198</span>
+                            <div class="lab-send"></div>
+                        </div>
+                    </div>
+                    <div class="whiteSpace30"></div>
+                </li>
+            </ul>
+            <div class="illDown">
+                <div class="illustration">
+                    <h6>现在开学差不多已有两个多月了吧!我们班的班主任老师的形象一直在我眼中不断地浮现出来。
+                        <br><br><br>
+                        记得有一次老师接到电话知道她的儿子发高烧了，按理说老师完全可以请半天的假回去照顾她的儿子。可是老师没有请假，她不愿意耽误我们的学习，依然来到了班上来讲课，自从那一次起，我发现了老师的慈爱，对我们班56个人都有一份的慈爱。
+                        <br><br><br>
+                        直到近日，老师还是有这份慈爱。就说前些天吧，老师感冒了声音也沙哑了。她在家休息了一天，第二天就又来到了我们面前。我发现老师把卷子也带过来了，为我们评价批改，我拿到李兴的卷子，老师轻声地说：“我点到谁的名字，帮他批改的人就上去。”老师点到李兴的名字，也许她声音不大，我没有听到。
+                        <br><br><br>
+                    </h6>
+                </div>
+                <div class="illPic"></div>
+                <div class="whiteSpace"></div>
+            </div>
+            <div class="btn-buy container">
+                <div class="btn-addToCart col-xs-6">
+                    加入购物车
+                </div>
+                <div class="btn-buyNow col-xs-6">
+                    立即购买
+                </div>
+            </div>
+            <div class="cart">
+                <p class="cartNum"></p>
+            </div>
+        </div>
+
+        <div class="topMask" style="opacity: .6;"></div>
+        <div class="topM">
+            <div class="btn-download">
+                <a href="#">立即下载</a>
+            </div>
+            <p class="closeTop">X</p>
+            <p class="downloadText">
+                下载肌肤管家APP<br>
+                即可一元抢购
+            </p>
+        </div>
+    </body>
+</html>
+
