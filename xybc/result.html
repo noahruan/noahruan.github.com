@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=750,user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="format-detection" content="telephone=no">
+        <title>{$t}</title>
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/ios.js"></script>
+        <script type="text/javascript" src="js/radialIndicator.js"></script>
+
+        <script type="text/javascript">
+            $(function () {
+
+                var oilValue = 89.9;
+                var waterValue = 28.9;
+                var elasticValue =18.9;
+                var tempV = 35;
+                var wetV = 40;
+                var UVV = 29;
+                var defNum = 81;
+                $(".waterP").html(waterValue);
+                $(".oilP").html(oilValue);
+                $(".elasticP").html(elasticValue);
+                $(".tempV").html(tempV);
+                $(".wetV").html(wetV);
+                $(".UVV").html(UVV);
+                $(".defNum").html(defNum);
+
+                $('#indicatorContainer1').radialIndicator({
+                    initValue: waterValue
+                });
+                $('#indicatorContainer1 canvas').width(170).height(170);
+
+                $('#indicatorContainer2').radialIndicator({
+                    initValue: oilValue
+                });
+                $('#indicatorContainer2 canvas').width(170).height(170);
+
+                $('#indicatorContainer3').radialIndicator({
+                    initValue: elasticValue
+                });
+                $('#indicatorContainer3 canvas').width(170).height(170);
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="layout">
+            <div class="resultHeader">
+                <div class="xyLogo"></div>
+                <div class="resultTit"></div>
+            </div>
+            <div class="info">
+                <div class="testResult">
+                    <ul>
+                        <li>
+                            <div class="waterR">
+                                <div class="prg-cont rad-prg" id="indicatorContainer1"></div>
+                            </div>
+                            <div class="waterBg"></div>
+                            <div class="value">
+                                <p class="waterP"></p>
+                                <p class="percentIcon"></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="oilR">
+                                <div class="prg-cont rad-prg" id="indicatorContainer2"></div>
+                                <div class="oilBg"></div>
+                                <div class="value">
+                                    <p class="oilP"></p>
+                                    <p class="percentIcon"></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="elasticR">
+                                <div class="prg-cont rad-prg" id="indicatorContainer3"></div>
+                                <div class="elasticBg"></div>
+                                <div class="value">
+                                    <p class="elasticP"></p>
+                                    <p class="percentIcon"></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--<div class="environment">-->
+                    <!--<ul>-->
+                        <!--<li>-->
+                            <!--<div class="value">-->
+                                <!--<P class="temp"></P>-->
+                                <!--<p class="tempV"></p>-->
+                                <!--<p class="tempIcon"></p>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<div class="value">-->
+                                <!--<P class="wet"></P>-->
+                                <!--<p class="wetV"></p>-->
+                                <!--<p class="tempIcon"></p>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<div class="value">-->
+                                <!--<P class="UV"></P>-->
+                                <!--<p class="UVV"></p>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <div class="userDefeat">
+                    <div class="uDC">
+                        <div class="center">
+                            <p></p>
+                        </div>
+                    </div>
+                    <p class="defNum"></p>
+                </div>
+            </div>
+            <div class="test-standard">
+                <div class="water-standard">
+                    <p><span>4444</span></p>
+                </div>
+                <div class="oil-standard">
+                    <p><span>5555</span></p>
+                </div>
+            </div>
+            <div class="resultPic">
+                <div class="picTit center">
+                    <div class="picText center">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="picDetail center">
+                    <div class="picLab"></div>
+                    <div>
+                        <img src="imgs/resultPic.png">
+                    </div>
+                </div>
+            </div>
+            <div class="divAdd">
+                <div class="skinAdd">
+                    <div class="addTit"><p></p></div>
+                    <div class="addText">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="divAdd">
+                <div class="foodAdd">
+                    <div class="addTit"><p></p></div>
+                    <div class="addText">
+                        <p>加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载加载</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="inputTel">
+                <div class="btn-again">
+                    <div class="center">
+                        <a href="#"><p class="center"></p></a>
+                    </div>
+                </div>
+                <div class="resultBottom"></div>
+            </div>
+     </div>
+    </body>
+</html>
+

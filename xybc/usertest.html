@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=750,user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="format-detection" content="telephone=no">
+        <title>{$t}</title>
+        <link rel="stylesheet" href="css/style.css">
+
+
+    </head>
+
+    <body>
+        <div class="layout">
+            <div class="myInfoP">
+                <div class="pageTest">
+                    <p></p>
+                </div>
+                <div class="testAreaSelect">
+                    <div class="connectStatus">
+                        <p></p>
+                        <span></span>
+                    </div>
+                    <div class="testTitle">
+                    </div>
+                    <div class="titBgC"></div>
+                    <div class="testFourArea">
+                        <ul>
+                            <li class="areaU" value="u">
+                                <p></p>
+                            </li>
+                            <li class="areaT" value="t">
+                                <p></p>
+                            </li>
+                            <li class="areaE" value="e">
+                                <p></p>
+                            </li>
+                            <li class="areaH" value="h">
+                                <p></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-toOther center">
+                        <a href="#"><p></p></a>
+                    </div>
+                    <div class="btn-modifyPerson center">
+                        <a href="userinput.html"><p></p></a>
+                    </div>
+                    <div class="btn-checkHistory center">
+                        <a href="userinput.html"><p></p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="myMask"></div>
+        <div class="xyMask"></div>
+        <div class="connectTip">
+            <div class="checkBlue">
+                <div class="closeTip" style="top: 260px;"></div>
+            </div>
+        </div>
+        <div class="question">
+            <div class="qBg">
+                <p></p>
+            </div>
+        </div>
+        <div class="introPic hide">
+            <div class="iPic"></div>
+        </div>
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/ios.js"></script>
+        <script type="text/javascript" src="js/test.js"></script>
+        <script type="text/javascript">
+            var connectStatus = 0;
+            $(function(){
+                $(".qBg").click(function(){
+                    $(".myMask").css("display","block");
+                    $(".introPic").removeClass("hide");
+                });
+                $(".myMask,.introPic").click(function(){
+                    $(".myMask").css("display","none");
+                    $(".introPic").addClass("hide");
+                });
+
+//                设备连接与未连接
+                if(connectStatus == 1){
+                    $(".connectStatus p").css("background-position","0 -1181px");
+                    $(".connectStatus span").html("蓝牙已连接");
+                    //连接
+                }else{
+                    $(".connectStatus p").css("background-position","0 -1128px");
+                    $(".connectStatus span").html("蓝牙未连接");
+                    //未连接
+                }
+
+                //测试区域选择
+                $(".areaU p").addClass("selectedArea");
+                $(".testFourArea li").click(function(){
+                    $(".testFourArea li p").removeClass("selectedArea");
+                    $(this).find('p').addClass("selectedArea");
+//                    alert( $(this).attr("value"));
+                });
+
+                //提示框
+                $(".xyMask").css("display","block").click(function(){
+                    $(this).css("display","none");
+                    $(".connectTip").css("display","none");
+                });
+                $(".closeTip").click(function(){
+                    $(".xyMask").css("display","none");
+                    $(".connectTip").css("display","none");
+                });
+            })
+        </script>
+    </body>
+</html>
+
