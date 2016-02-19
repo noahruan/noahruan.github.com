@@ -1,0 +1,8 @@
+*.idea/
+*~
+*.git/
+*.gitattributes
+*.rar
+*.zip
+*.[oa]
+
