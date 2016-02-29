@@ -1,0 +1,228 @@
+/*@charset "gb2312";*/
+/**
+ * 网站地址: http://www.qietu.com
+ * ----------------------------------------------------------------------------
+ * $codex 1. id和class命名采用该版块的英文单词或组合命名，并第一个单词小写，第二个单词首个字母大写，如:thinkCss（最新产品/think+Css)
+ * $codex 2. CSS样式表各区块用注释说明
+ * $codex 3. 尽量使用英文命名原则
+ * $codex 4. 尽量不加中杠和下划线
+ * $codex 5. 尽量不缩写，除非一看就明白的单词
+ * $Author: psd2html
+ * $mailto: <psd2html@qq.com>
+ * $hack :ie 6 _  \ ie7 *+ \  ie6,ie7 *  \  ie7,firefox !important ie9, \9
+*/
+/**
+ +------------------------------------------------------------------------------
+ * 网站样式重写
+ +------------------------------------------------------------------------------
+ * @comefrom  互联网
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+html{-webkit-text-size-adjust:none; /*解决chrome浏览器下字体不能小于12px*/}
+body{ color:#000000; font-family:"Microsoft YaHei", sans-serif}
+* {}
+a{outline:none; text-decoration:none;} a:hover{ text-decoration:underline;}
+html{zoom:1;}html *{outline:0;zoom:1;} html button::-moz-focus-inner{border-color:transparent!important;}
+body{overflow-x: hidden;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;} table{/*border-collapse:collapse;border-spacing:0;*/} fieldset,a img{border:0;} address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;} li{list-style:none;} caption,th{text-align:left;} h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;} q:before,q:after{content:'';}
+input[type="submit"], input[type="reset"], input[type="button"], button { -webkit-appearance: none; /*???????????I????????*/} em,i{ font-style:normal;}
+
+
+
+
+/**
+ +------------------------------------------------------------------------------
+ * Public Class
+ +------------------------------------------------------------------------------
+ * @subpackage  RBAC
+ +------------------------------------------------------------------------------
+ */
+.clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden; }.clearfix {display:block;}.clear{ clear:both;}/* ??????*/
+.colwrapper { overflow:hidden; zoom:1 /*for ie*/; margin:5px auto; }/* ???????? */
+.strong{ font-weight: bold;} .left{ float: left;} .right{ float: right;} .center{ margin:0 auto; text-align:center;}
+.show{ display:block; visibility:visible;}
+.hide{ display: none; }
+/*visibility:hidden;*/
+.block{ display:block;} .inline{ display:inline;}
+.transparent{filter:alpha(opacity=50); -moz-opacity:0.5;/** Firefox 3.5?????????opacity??????????????????irefox3????????? ***/ -khtml-opacity: 0.5; opacity: 0.5; } .break{ word-wrap:break-word;overflow:hidden; /*word-break:break-all;*/}
+
+.tal{ text-align:left} .tar{ text-align:right;}
+
+/*文字两侧对齐*/
+.justify {
+	text-align:justify;
+	/*text-justify:distribute-all-lines;/!*ie6-8*!/*/
+	text-align-last:justify;/* ie9*/
+	-moz-text-align-last:justify;/*ff*/
+	-webkit-text-align-last:justify;/*chrome 20+*/
+}
+
+.toe{
+	/*超出省略号*/
+	word-break:keep-all;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){/* chrome*/
+	.justify:after{
+		content:".";
+		display: inline-block;
+		width:100%;
+		overflow:hidden;
+		height:0;
+	}
+}
+
+/* 兼容IE6的定位属性fixed，固定不动样式 */
+.fixed{
+	position:fixed;
+	/*clip:rect(0 100% 100% 0);*/
+	_position:absolute;
+
+	/* 底部 */
+	bottom:0;
+	left:0;
+	_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);
+	/*_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);*/
+
+	/* 左侧 */
+	/*left:0px;*/
+	/*_top:expression(document.documentElement.scrollTop+document.documentElement.clientHeight-this.clientHeight);*/
+	/*_left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);*/
+}
+/* 解决固定层在IE6下闪的问题 */
+*html{
+	background-image:url(http://about:blank);
+	background-attachment:fixed;
+}
+
+/*png图片ie6下透明滤镜实现写法*/
+.pngimg{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/x.png');}
+em{ font-style:italic !important;} strike{ text-decoration:line-through !important;} strong{ font-weight:bold !important;} u{ text-decoration:underline !important;}
+
+.ff8600,.ff86aa a{ color:#ff8600;}
+@media screen and (max-width: 650px) {}
+@media screen and (max-width: 480px) {}
+
+/*everyoneshare page*/
+.eys_layout{
+	width: 100%;
+	background-color: #f0f2f1;
+	font-size: 12px;
+}
+.eys_head{
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	background-color: #fff;
+}
+.eys_head img:first-child{
+	width: 60px;
+	height: 60px;
+	border-radius: 3em;
+	background-color: #f2f2f2;
+	top: 20px;
+	left: 30px;
+	position: relative;
+}
+.eys_head img,.eys_head p{
+	display: inline;
+}
+.eys_head p{
+	margin-left: 50px;
+	color: #363d4d;
+	font-size: 2em;
+}
+.eys_head img:last-child{
+	float: right;
+	position: relative;
+	top: 40px;
+	right: 30px;
+}
+.eys_content{
+	width: 100%;
+	background-color: #fff;
+}
+.eys_content img{
+	width: 100%;
+}
+.eys_tip{
+	width: 695px;
+	height: 80px;
+	margin-top: 30px;
+	text-align: left;
+	border-bottom:#f0f2f1 solid 1px;
+	color: #999;
+	font-size: 2em;
+	font-weight: bold;
+}
+.eys_score{
+	margin-top: 60px;
+	height: 120px;
+	width: 120px;
+	border: #00a488 dashed 1px;
+	color: #00a488;
+
+}
+.eys_score p:first-child{
+	margin-top: 20px;
+	font-size: 1.7em;
+	color: #999;
+}
+.eys_score p:last-child{
+	margin-top: 10px;
+	font-size: 2em;
+}
+.eys_score span{
+	font-size: 1.5em;
+}
+.eys_num{
+	float: right;
+	color: #999;
+	font-size: 1.7em;
+	position: relative;
+	right: 30px;
+	top: -15px;
+}
+.eys_required{
+	margin-top: 30px;
+	background-color: #fff;
+}
+.eys_required h3{
+	color: #713e2f;
+	padding-top: 30px;
+	font-size: 2em;
+	padding-left: 30px;
+}
+.h30{
+	height: 30px;
+	width: 100%;
+}
+.h50{
+	height: 50px;
+	width: 100%;
+}
+.eys_required p{
+	color: #363d4e;
+	margin-top: 20px;
+	font-size: 1.7em;
+	padding-bottom: 30px;
+	width: 92%;
+	text-align: left;
+}
+.eys_apply{
+	width: 690px;
+	height: 100px;
+	margin-top: 30px;
+	line-height: 100px;
+	background-color: #ffd460;
+	color: #703e31;
+	font-size: 2em;
+	border-radius: .5em;
+}
+a,a:hover{
+	text-decoration: none;
+	cursor: pointer;
+}

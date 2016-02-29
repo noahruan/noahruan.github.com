@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>{$t}</title>
+    <link rel="stylesheet" href="css/applym.css">
+
+</head>
+
+<body>
+    <div class="am_layout">
+            <div class="bank_info">
+                <p class="center hide">暂无银行卡<span class="right transIcon"></span></p>
+                <p class="center ">
+                    <img class="bankicon" src="imgs/bankicon.png" alt="bank">
+                    <span class="bank_name">建设银行</span>
+                    <span class="right transIcon"></span>
+                    <span class="bank_no">尾号3006储蓄卡</span>
+                </p>
+            </div>
+        <div class="tip_left center">
+            <p>可转出余额<span>880</span>元</p>
+        </div>
+        <div class="am_bank_input">
+            <form action="" method="post">
+                <ul>
+                    <li id="cost" class="center">
+                        <div style="width: 20%;"><h3>转出金额</h3></div>
+                        <input type="text" class="text" style="width: 75%;" placeholder="请输入金额" name="" id="costInput" value=""  required/>
+                    </li>
+                </ul>
+            </form>
+            <button class="bank_btn nocard" disabled>立即提现</button>
+            <!--js控制成功提示样式-->
+        </div>
+        <div class="mask hide"></div>
+        <div class="bank_tip hide">
+            <div class="bank_tip_window center">
+                <div class="tip_top">
+                    <div class="tip-close"><p>x</p></div>
+                    <div class="tip_text">
+                        <h3>温馨提示</h3>
+                        <p class="center">您的账户信息已提交成功,请随时注
+                            意账户余额变化。</p>
+                    </div>
+                </div>
+                <div class="tip_confirm">
+                    <p>确定</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/ios.js"></script>
+    <script type="text/javascript" src="js/selectbank.js"></script>
+    <script>
+        $(function(){
+            //        显示提示成功按钮
+            $(".bank_btn").click(function(){
+                if($("#costInput").val()>0){
+                    $(".mask").removeClass("hide");
+                    $(".bank_tip").removeClass("hide");
+                }
+            });
+
+
+
+        })
+    </script>
+</body>
+</html>
+

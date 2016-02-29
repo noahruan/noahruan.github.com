@@ -10,8 +10,8 @@
         <meta name="apple-mobile-web-app-title" content="">
         <meta name="format-detection" content="telephone=no">
         <title>{$t}</title>
-        <link rel="stylesheet" href="css/0actstyle.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
 
         <script src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/ios.js"></script>
@@ -71,16 +71,33 @@
                     </p>
                 </div>
             </div>
-
             <div >
                 <p class="resultText"></p>
                 <p class="orderRNo"></p>
             </div>
             <div class="infoText">
-                <P></P>
+                <P class="hide"></P>
+                <div class="getMoney">
+                    <div class="get_tip center"></div>
+                    <div class="btn-invite center">
+                        <span>邀好友一起来</span>
+                    </div>
+                </div>
             </div>
+
         </div>
         <div class="topMask"></div>
+        <div class="share_mask hide"></div>
+        <div class="share_text hide"></div>
+        <script>
+            $(".share_mask,.share_text").click(function(){
+                $(".share_mask,.share_text").addClass("hide");
+            });
+            $(".btn-invite").click(function(){
+                $(".share_mask,.share_text").removeClass("hide");
+            });
+        </script>
     </body>
+
 </html>
 
