@@ -225,3 +225,78 @@ a,a:hover{
 	text-decoration: none;
 	cursor: pointer;
 }
+
+/*es2 page*/
+.eys2tip{
+	color: #703e31;
+	font-size: 2.5em;
+}
+.eys2tip p{
+	width: 605px;
+}
+.eys2tip span{
+	position: relative;
+	top: -45px;
+	float: right;
+	transform: scale(1,2);
+	-ms-transform: scale(1,2);
+	-webkit-transform: scale(1,2);
+	-moz-transform: scale(1,2);
+}
+.eys2cost{
+	margin-top: 30px;
+	margin-left: 30px;
+	color: #f02f66;
+	font-size: 1.4em;
+	display: inline;
+}
+.eys2cost span{
+	font-size: 1.6em;
+}
+.eys2_from{
+	color: #999;
+	font-size: 1.7em;
+	display: inline;
+	float: right;
+	margin-right: 30px;
+}
+.eys2_from span:last-child{
+	margin-left: 40px
+}
+.es2say{
+	margin-top: 0;
+}
+.es2say h3{
+	font-size: 1.7em;
+	color: #999;
+	padding-top: 40px;
+}
+.es2say p{
+	padding-bottom: 0;
+}
+.esy2_btn{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	font-size: 2em;
+}
+.esy2_btn div{
+	display: inline-block;
+	height: 100px;
+	line-height: 100px;
+	float: left;
+}
+.esy2_btn div:first-child{
+	width: 35%;
+	background-color: #ffd460;
+	color: #703e31;
+}
+.esy2_btn div:last-child{
+	width: 65%;
+	background-color: #fff;
+	color: #999;
+}
+.h130{
+	height: 130px;
+	width: 100%;
+}

@@ -351,6 +351,7 @@ em{ font-style:italic !important;} strike{ text-decoration:line-through !importa
 .zact-form li {
 	height: 100px;
 	background: #fff;
+	position: relative;
 }
 .zact-form li:first-child{
 	margin-bottom: 1px;
@@ -363,7 +364,7 @@ em{ font-style:italic !important;} strike{ text-decoration:line-through !importa
 	height: 100px;
 	width: 100%;
 	border: none;
-	margin-left: 40px;
+	margin-left: 20px;
 	color: #b3b3b3;
 	float: left;
 	display: inline;
@@ -395,4 +396,11 @@ em{ font-style:italic !important;} strike{ text-decoration:line-through !importa
 	width: 90%;
 	border: none;
 	border-radius: .8rem;
+}
+.fornew{
+	color: #ff5975;
+	font-size: 2em;
+	position: absolute;
+	top: 38px;
+	right: -10px;
 }
