@@ -1,0 +1,433 @@
+<!-- <!DOCTYPE html> -->
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+    <head>
+        <title> new document </title>
+        <meta name="generator" content="editplus">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=640" />
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/gamestyle.css">
+        <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+        <script type="text/javascript" src="js/ios.js"></script>
+        <script type="text/javascript" src="js/addons.js"></script>
+
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="css/jQueryuistyle.css">
+        
+        <style type="text/css">
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                text-align: center;
+            }
+            #canvas {
+                margin: 0 auto;
+            }
+
+            .ui-progressbar {
+                position: relative;
+                margin-top: 3em;
+                margin-left: 22.5em;
+                width: 19em;
+                height: 3em;
+                border-radius: 3em;
+                
+            }
+            .progress-label {
+                position: absolute;
+                left: 40%;
+                top: 4px;
+                font-size: 25px;
+                font-weight: bold;
+                text-shadow: 1px 1px 0 #fff;
+                color: 
+            }
+        </style>
+        <script></script>
+    </head>
+
+
+    <SCRIPT LANGUAGE="JavaScript">
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 7, 8, 8, 9];
+        //<!--
+        // 金币对像
+        var five = new Image();
+        five.src = "image/mooncake.png";
+        //anchor.gif
+        five.value = 5;
+        five.speed = 90;
+
+        var ten = new Image();
+        ten.src = "image/herocoin.png";
+        //flash.gif
+        ten.value = 10;
+        ten.speed = 90;
+
+        var twenty = new Image();
+        twenty.src = "image/fasthero.png";
+        //"rm.gif";
+        twenty.value = 20;
+        twenty.speed = 60;
+
+        var ten1 = new Image();
+        ten1.src = "image/herocoin.png";
+        //flash.gif
+        ten1.value = 10;
+        ten1.speed = 60;
+
+        var twenty1 = new Image();
+        twenty1.src = "image/hero.png";
+        //"rm.gif";
+        twenty1.value = 20;
+        twenty1.speed = 60;
+
+        var heroImg = new Image();
+        heroImg.src = "image/hero.png ";
+        //"smiley.png";
+        // heroImg.speed = 20;
+
+        var bg = new Image();
+        bg.src = "image/bg2.png";
+        //"bg.jpg";
+
+        var myVar;
+        var homepage = new Image();
+        homepage.src = "image/homepage.png";
+
+        var fivecount = 0;
+        var tencount = 0;
+        var twentycount = 0;
+        var countTime = 19;
+
+        // 金币类;
+        function Money(x, y, speed, img) {
+            // 没次循环增加的像素数
+            this.speed = speed;
+            this.x = x;
+            this.y = y;
+            this.width = img.width;
+            this.height = img.height;
+            this.img = img;
+            this.value = img.value;
+        }
+
+
+        Money.prototype = {
+            draw : function(ctx) {
+                ctx.drawImage(this.img, this.x, this.y);
+            },
+            move : function() {
+                this.y += this.speed;
+            }
+        }
+
+        // 娃娃脸
+        function Hero(x, y, img) {
+            this.score = 0;
+            this.miss = 0;
+            this.speed = 0.1;
+
+            this.fivevalue = 0;
+            this.tenvalue = 0;
+            this.twentyvalue = 0;
+
+            this.x = x;
+            this.y = y;
+            this.img = img;
+            this.width = img.width;
+            this.height = img.height;
+        }
+
+
+        Hero.prototype = {
+            draw : function(ctx) {
+                ctx.drawImage(this.img, this.x, this.y);
+            },
+            touch : function(other) {
+                if (this.x + this.width > other.x && this.x < other.x + other.width && this.y + this.height > other.y && this.y < other.y + other.height) {
+                    this.score += other.value;
+                    if (other.value == 5) {
+                        this.fivevalue++;
+                    }
+                    if (other.value == 10) {
+                        this.tenvalue++;
+                    }
+                    if (other.value == 20) {
+                        this.twentyvalue++;
+                    }
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
+        var App = {
+            // 对象
+            elements : [],
+            backImg : bg,
+            imgs : [five, ten, twenty, ten1, twenty1],
+            hero : null,
+            // 画布
+            canvas : null,
+            // 绘制工具
+            context : null,
+            // 定时器
+            timer : null,
+            // 速度（更新间隔speed * 10）
+            speed : 0,
+            pause : false,
+
+            // 绘制对象
+            draw : function() {
+                // 清屏
+                this.context.clearRect(0, 0, this.canvas.width, canvas.height);
+                // 绘制背景
+                this.context.drawImage(this.backImg, 0, 0);
+                // 绘制娃娃脸
+                this.hero.draw(this.context);
+
+                // 绘制金币
+                for (var i = 0; i < this.elements.length; i++) {
+                    var o = this.elements[i];
+                    // 清理屏幕外的对象
+                    if (o.x > this.canvas.width || o.x < 0 || o.y > this.canvas.height || o.y < 0) {
+                        this.elements.splice(i, 1);
+                        this.hero.miss++;
+                    } else if (this.hero.touch(o)) {
+                        this.elements.splice(i, 1);
+                    } else {
+                        o.draw(this.context);
+                    }
+                }
+
+                // 绘制生命值及得分
+                this.context.textAlign = "left";
+                this.context.font = 'normal 30px Arial';
+                this.context.fillStyle = "#000";
+                // this.context.fillText("Miss:" + this.hero.miss, 5, 35);
+                // this.context.fillText("Score:" + this.hero.score, 5, 15);
+                // this.context.fillText("fivevalue:" + this.hero.fivevalue, 5, 55);
+                // this.context.fillText("tenvalue:" + this.hero.tenvalue, 5, 75);
+                // this.context.fillText("twentyvalue:" + this.hero.twentyvalue, 5, 95);
+                // this.context.fillText(countTime + " s", 365, 60);
+
+            },
+
+            // 循环处理
+
+            loop : function() {
+                var me = App;
+
+                for (var i = 0; i < me.elements.length; i++) {
+                    me.elements[i].move();
+                }
+                var chance = Math.random() * 1000;
+                // 1/10的对象添加概率
+
+                if (chance < 150) {
+
+                    var img = me.imgs[parseInt(chance % me.imgs.length)];
+
+                    if (img.value == 5) {
+                        fivecount++;
+                    } else if (img.value == 10) {
+                        tencount++;
+                    } else if (img.value == 20) {
+                        twentycount++;
+                    }
+                    ;
+
+                    // if(twentycount > 1 && img.value == 20){img.speed=0;img.src=""};
+                    // if(twentycount > 1){twenty.speed=0;twenty.src="";};
+
+                    var x = Math.random() * (me.canvas.width - me.imgs[parseInt(chance % me.imgs.length)].width);
+                    var y = 130;
+                    var speed = img.speed;
+                    var money = new Money(x, y, speed, img);
+                    me.addElement(money);
+                }
+
+                me.draw();
+                
+                // if (me.hero.miss == 30) {
+                    // me.gameOver();
+                // }
+            },
+
+            // 开始游戏
+            gameStart : function(id, speed) {
+                var me = this;
+                
+                
+                me.canvas = document.getElementById(id);
+                me.context = me.canvas.getContext("2d");
+                me.speed = speed;
+                me.hero = new Hero((me.canvas.width - heroImg.width) / 2, me.canvas.height - heroImg.height, heroImg);
+
+                if (this.timer != null)
+                    me.gameOver();
+
+                function touchStart(e) {
+                    e.preventDefault();
+                    var touch = e.touches[0];
+                }
+
+                // touch move listener
+                function touchMove(e) {
+                    e.preventDefault();
+                    if (!me.hero || !e.touches.length)
+                        return;
+                    var touch = e.touches[0];
+
+                    var x = touch.pageX - me.canvas.offsetLeft - me.hero.width / 2;
+                    if (x > 0 && x < me.canvas.width - me.hero.width) {
+                        me.hero.x = x;
+                    }
+                }
+                
+                
+
+                // touch end listener
+                function touchEnd(e) {
+                    if (!me.hero)
+                        return;
+                }
+
+
+                me.canvas.addEventListener("touchstart", touchStart, false);
+                me.canvas.addEventListener("touchmove", touchMove, false);
+                me.canvas.addEventListener("touchend", touchEnd, false);
+
+                me.timer = setInterval(me.loop, me.speed * 10);
+                myVar1 = setInterval(function() {
+                    me.gameOver()
+                }, 20000);
+                myVar2 = setInterval(function() {
+                    myTime()
+                }, 1000);
+
+                function myTime() {
+                    countTime--;
+                    // me.canvas.context.fillText("countTime:" + countTime, 5, 115);
+                }
+
+                $(function() {
+                    var progressbar = $("#progressbar"),
+                        progressLabel = $(".progress-label");
+
+                    progressbar.progressbar({
+                        value : false,
+                        change : function() {
+                            progressLabel.text(progressbar.progressbar("value") + " s");
+                        },
+                        complete : function() {
+                            progressLabel.text("20 s");
+                        }
+                    });
+                    var time;
+                    function progress() {
+                        var val = progressbar.progressbar("value") || 100;
+
+                        progressbar.progressbar("value", val - 1);
+
+                        if (val > 0) {
+                            time = setTimeout(progress, 1000);
+                        }
+                        if (val == 1) {
+                            clearTimeout(time);
+                        }
+                    }
+
+                    progress();
+
+                });
+
+            },
+
+            // 暂停游戏
+            // gamePause:function(){
+            // this.pause = true;
+            // this.context.textAlign = "center";
+            // this.context.fillStyle = "#f00";
+            // this.context.font = 'bold 50px Arial';
+            // this.context.fillText("Pause!",this.canvas.width/2,this.canvas.height/2);
+            // this.context.font = 'bold 20px Arial';
+            // this.context.fillText("Press space key to continue...",this.canvas.width/2,this.canvas.height/2 + 40);
+            // },
+            // 结束游戏
+            gameOver : function() {
+                clearInterval(this.timer);
+                this.elements = [];
+                this.pause = false;
+                this.timer = null;
+                this.context.textAlign = "center";
+                this.context.fillStyle = "#f00";
+                this.context.font = 'bold 40px Arial';
+                this.context.fillText("Time Out!", this.canvas.width / 2, this.canvas.height / 2);
+                // this.context.fillText("", 5, 115);
+                // clearInterval(myVar);
+            },
+            // 添加对象
+            addElement : function(o) {
+                this.elements.push(o);
+            }
+        }
+
+        window.onload = function() {
+            var can = func("canvas");
+            var ctx = func("canvas").getContext("2d");
+
+            ctx.drawImage(homepage, 0, 75);
+            ctx.drawImage(heroImg, (can.width - heroImg.width) / 2, can.height - heroImg.height);
+            ctx.textAlign = "center";
+            ctx.fillStyle = "#f00";
+            ctx.font = 'bold 20px Arial';
+            ctx.fillText("Click to start...", can.width / 2, can.height / 1.2);
+            document.onclick = function(e) {
+                // if(e.keyCode != 32){
+                // return;
+                // }
+
+                if (App.timer == null) {
+                    App.gameStart("canvas", 8);
+
+                } else if (App.pause) {
+                    App.pause = false;
+                }
+                // else{
+                // App.gamePause("canvas",6);
+                // }
+            }
+        }
+        function func(id) {
+            return document.getElementById(id);
+        }
+
+    </SCRIPT>
+    <body>
+        <div id="progressbar">
+            <div class="progress-label">
+                                            
+            </div>
+        </div>
+        <canvas id="canvas" width="750" height="500" style="border:0px solid #ccc;margin-top: -6.5em;"></canvas>
+    </body>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        canvas.width = document.documentElement.clientWidth;
+        canvas.height = document.documentElement.clientHeight;
+    </script>
+</html>
