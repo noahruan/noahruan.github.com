@@ -24,7 +24,7 @@ function Excel(){
                 var num2 = parseFloat(data.Number) + 2;
                 console.log(data);
                 //console.log(num2);
-                csvStream += parseJSON(data);
+                csvStream = data;
             })
             .on("end", function() {
                 console.log("done");
