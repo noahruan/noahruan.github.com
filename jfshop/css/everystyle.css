@@ -301,3 +301,61 @@ a,a:hover{
 	height: 130px;
 	width: 100%;
 }
+
+/*alltest page*/
+.allt_layout{
+	width: 100%;
+	background-color: #fdfcf7;
+	font-size: 12px;
+}
+.allt_tit{
+	width: 284px;
+}
+.allt_tit p:first-child{
+	background: url("../imgs/allt-tit.png") no-repeat;
+	height: 110px;
+	width: 184px;
+}
+.allt_tit p:last-child{
+	color: #01a1e2;
+	font-size: 2.3em;
+}
+.allt_layout ul{
+	margin-top: 50px;
+	text-align: left;
+	width: 680px;
+}
+.allt_layout ul li{
+	width: 100%;
+	margin-top: 60px;
+}
+.allt_layout ul li:first-child{
+	margin-top: 0;
+}
+.allt_layout ul li h3{
+	font-size: 2.7em;
+	color: #703e31;
+}
+.allt_layout ul li p{
+	font-size: 2em;
+	margin-top: 20px;
+	color: #666;
+}
+.allt_layout .about_all ul li span{
+	color: #2c45db;
+}
+.allt_layout .report_tip ul li span{
+	color: #000;
+}
+.user_tip{
+	margin-top: 50px;
+}
+.report_tip{
+	margin-top: 50px;
+	margin-bottom: 130px;
+}
+.report_tit_tip{
+	color: #666;
+	font-size: 1.7em;
+	margin-top: 20px;
+}
